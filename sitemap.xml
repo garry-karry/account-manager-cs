@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  This site is a single HTML page with client-side tabs (Course /
+  Knowledge Base / Journal switch via JavaScript, not separate URLs),
+  so there is only one real crawlable address to list here.
+  Update <lastmod> whenever you make a meaningful content change.
+-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://amacademy.pro/</loc>
+    <lastmod>2026-07-29</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

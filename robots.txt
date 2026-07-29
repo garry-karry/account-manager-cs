@@ -1,0 +1,8 @@
+# Account Manager & Customer Success Course
+# Allow all search engines (Google, Yandex, Bing/Yahoo, etc.)
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://amacademy.pro/sitemap.xml
