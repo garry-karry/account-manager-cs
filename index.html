@@ -843,6 +843,16 @@
     background:rgba(156,127,230,.1); border:1px solid rgba(156,127,230,.4);
     padding:3px 10px; border-radius:100px; margin-left:10px; vertical-align:middle;
   }
+  .duel-ingredients{
+    display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px;
+    margin-bottom:28px;
+  }
+  .duel-ingredient-card{
+    background:var(--surface-2); border:1px solid var(--line); border-radius:12px; padding:18px;
+  }
+  .di-icon{font-size:21px; margin-bottom:9px;}
+  .duel-ingredient-card h4{font-size:14.5px; color:var(--text); margin:0 0 6px;}
+  .duel-ingredient-card p{font-size:13px; color:var(--text-dim); line-height:1.55; margin:0;}
   .duel-config{
     background:var(--surface-2); border:1px solid var(--line); border-radius:14px;
     padding:24px; margin-bottom:24px; display:grid; gap:18px;
@@ -1819,6 +1829,39 @@
           <span class="kicker" data-i18n="duel_kicker"></span><span class="duel-annual-badge" data-i18n="duel_annual_badge"></span>
           <h2 data-i18n="duel_h2"></h2>
           <p class="section-sub" data-i18n="duel_sub"></p>
+        </div>
+
+        <div class="duel-ingredients">
+          <div class="duel-ingredient-card">
+            <div class="di-icon">🎭</div>
+            <h4 data-i18n="duel_ing1_title"></h4>
+            <p data-i18n="duel_ing1_body"></p>
+          </div>
+          <div class="duel-ingredient-card">
+            <div class="di-icon">🎯</div>
+            <h4 data-i18n="duel_ing2_title"></h4>
+            <p data-i18n="duel_ing2_body"></p>
+          </div>
+          <div class="duel-ingredient-card">
+            <div class="di-icon">⚔️</div>
+            <h4 data-i18n="duel_ing3_title"></h4>
+            <p data-i18n="duel_ing3_body"></p>
+          </div>
+          <div class="duel-ingredient-card">
+            <div class="di-icon">🧩</div>
+            <h4 data-i18n="duel_ing4_title"></h4>
+            <p data-i18n="duel_ing4_body"></p>
+          </div>
+          <div class="duel-ingredient-card">
+            <div class="di-icon">⏱</div>
+            <h4 data-i18n="duel_ing5_title"></h4>
+            <p data-i18n="duel_ing5_body"></p>
+          </div>
+          <div class="duel-ingredient-card">
+            <div class="di-icon">📜</div>
+            <h4 data-i18n="duel_ing6_title"></h4>
+            <p data-i18n="duel_ing6_body"></p>
+          </div>
         </div>
 
         <div class="agated" data-agate="duel">
@@ -3194,6 +3237,18 @@
       duel_label_wantscript: "Include a reference script",
       duel_label_wanthints: "Include traps &amp; tools (hints)",
       duel_generate_cta: "🎲 Generate a scenario",
+      duel_ing1_title: "A different client persona, every time",
+      duel_ing1_body: "15 conflict themes, gender, temperament, toxicity level, and communication style — the generator assembles a unique client for your exact settings, not a reshuffled set of the same lines.",
+      duel_ing2_title: "A named technique in focus",
+      duel_ing2_body: "Each scenario comes with its own named technique (like \"Perception Check\" or \"'We'-Language\") — a short theory block on why it matters here, and what to lean on in the conversation.",
+      duel_ing3_title: "A line-by-line script",
+      duel_ing3_body: "A model conversation with the client, broken down line by line — with traps to avoid and tools that actually work in this specific situation.",
+      duel_ing4_title: "A mini-quiz after every scenario",
+      duel_ing4_body: "Three lines to judge as a trap or a good move — with feedback that's tied to this exact scenario, not a generic answer key.",
+      duel_ing5_title: "A countdown timer",
+      duel_ing5_body: "A timer to run the conversation out loud under real time pressure — the way it actually plays out on a call, not at a comfortable reading pace.",
+      duel_ing6_title: "History with no repeats",
+      duel_ing6_body: "Every new scenario is checked against the ones you've already played — the same combination of settings won't come up twice in a row.",
       duel_teaser_cta: "🎙 Open the Dueling Club →",
       duel_history_title: "Duel history",
       duel_clear_history: "Clear history",
@@ -3658,6 +3713,18 @@
       duel_label_wantscript: "Добавить опорный сценарий",
       duel_label_wanthints: "Добавить подсказки: ловушки и инструменты",
       duel_generate_cta: "🎲 Сгенерировать сценарий",
+      duel_ing1_title: "Персонаж клиента, каждый раз новый",
+      duel_ing1_body: "15 тем конфликтов, пол, темперамент, уровень токсичности и стиль общения — генератор собирает уникального клиента под ваши настройки, а не тасует один и тот же набор реплик.",
+      duel_ing2_title: "Приём в фокусе",
+      duel_ing2_body: "У каждого сценария — свой named-приём (например, «Проверка понимания» или «Язык „мы“»): короткая теория, зачем он нужен именно здесь, и на что опереться в разговоре.",
+      duel_ing3_title: "Разбор диалога по репликам",
+      duel_ing3_body: "Модельный разговор с клиентом, разложенный по репликам — с ловушками, которых стоит избегать, и инструментами, которые реально работают в этой ситуации.",
+      duel_ing4_title: "Мини-квиз после каждого сценария",
+      duel_ing4_body: "Три реплики на выбор — «ловушка» или «хороший ход» — с пояснением ответа, которое тоже привязано к конкретному сценарию, а не общее для всех.",
+      duel_ing5_title: "Таймер на отработку",
+      duel_ing5_body: "Обратный отсчёт, чтобы проговорить разговор вслух под давлением времени — так, как это происходит в реальном звонке, а не в комфортном темпе чтения.",
+      duel_ing6_title: "История без повторов",
+      duel_ing6_body: "Каждый новый сценарий проверяется на совпадение с уже сыгранными — один и тот же набор параметров дважды подряд не выпадет.",
       duel_teaser_cta: "🎙 Открыть Дуэльный клуб →",
       duel_history_title: "История дуэлей",
       duel_clear_history: "Очистить историю",
