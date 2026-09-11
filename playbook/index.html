@@ -83,12 +83,25 @@
   .sub{font-size:17px; color:var(--text-dim); max-width:56ch; margin:0 0 30px;}
   .sub b{color:var(--text); font-weight:600;}
 
-  .cards{display:grid; grid-template-columns:repeat(auto-fit, minmax(140px,1fr)); gap:10px; margin-bottom:36px;}
+  .cards{display:grid; grid-template-columns:1fr 1fr 1fr; gap:10px; margin-bottom:36px;}
+  @media (max-width:480px){ .cards{grid-template-columns:1fr;} }
   .mini-card{
     background:var(--surface); border:1px solid var(--line); border-radius:10px;
     padding:12px 14px; font-size:13px; color:var(--text-dim);
   }
   .mini-card b{display:block; color:var(--text); font-size:13.5px; margin-bottom:2px; font-weight:600;}
+
+  .academy-teaser{
+    grid-column:span 2; display:flex; align-items:center; justify-content:space-between; gap:14px;
+    background:linear-gradient(100deg, rgba(227,179,65,.14), rgba(255,107,79,.1));
+    border:1px solid rgba(227,179,65,.5); border-radius:10px;
+    padding:12px 16px; text-decoration:none; transition:transform .15s ease, border-color .15s ease;
+  }
+  .academy-teaser:hover{transform:translateY(-2px); border-color:var(--gold);}
+  .academy-teaser b{display:block; color:var(--gold); font-size:13.5px; margin-bottom:2px; font-weight:700;}
+  .academy-teaser span.sub{color:var(--text-dim); font-size:13px;}
+  .academy-teaser .arrow{font-size:18px; color:var(--gold); flex:none;}
+  @media (max-width:480px){ .academy-teaser{grid-column:span 1;} }
 
   .dl-row{display:flex; flex-wrap:wrap; gap:14px; margin-bottom:8px;}
   .dl-btn{
@@ -141,8 +154,10 @@
 
     <div class="cards">
       <div class="mini-card"><b data-i18n="card1-b">10 pages</b><span data-i18n="card1-t">practical format</span></div>
-      <div class="mini-card"><b data-i18n="card2-b">EN + RU</b><span data-i18n="card2-t">your choice</span></div>
-      <div class="mini-card"><b data-i18n="card3-b">Free</b><span data-i18n="card3-t">no email required</span></div>
+      <a class="academy-teaser" href="https://amacademy.pro" target="_blank" rel="noopener">
+        <span><b data-i18n="teaser-b">This is just the start 👀</b><span class="sub" data-i18n="teaser-t">The full course is inside the Academy</span></span>
+        <span class="arrow">&rarr;</span>
+      </a>
     </div>
 
     <div class="dl-row">
@@ -197,8 +212,7 @@
       "h1": "The First 30 Days of a <span class=\"hl\">CS / AM Team Lead</span>",
       "sub": "A practical framework for new leads: <b>team diagnostic, 1:1 structure, KPI scorecard, delegation matrix and a difficult-conversation script</b>. No theory for theory&rsquo;s sake &mdash; just what you actually use in month one.",
       "card1-b": "10 pages", "card1-t": "practical format",
-      "card2-b": "EN + RU", "card2-t": "your choice",
-      "card3-b": "Free", "card3-t": "no email required",
+      "teaser-b": "This is just the start 👀", "teaser-t": "The full course is inside the Academy",
       "btn-en": "Download in English",
       "btn-ru": "Скачать на русском",
       "fineprint": "PDF · ~6 MB · opens in any viewer",
@@ -217,8 +231,7 @@
       "h1": "Первые 30 дней <span class=\"hl\">тимлида</span> CS / AM",
       "sub": "Практический фреймворк для тех, кто только стал руководителем: <b>диагностика команды, структура 1:1, KPI-скоркард, матрица делегирования и сценарий сложного разговора</b>. Без теории ради теории &mdash; только то, что реально применяется в первый месяц.",
       "card1-b": "10 страниц", "card1-t": "практический формат",
-      "card2-b": "EN + RU", "card2-t": "на выбор",
-      "card3-b": "Бесплатно", "card3-t": "без email и подписки",
+      "teaser-b": "Это только начало 👀", "teaser-t": "Полный курс - в Академии",
       "btn-en": "Download in English",
       "btn-ru": "Скачать на русском",
       "fineprint": "PDF · ~6 МБ · открывается в любом просмотрщике",
