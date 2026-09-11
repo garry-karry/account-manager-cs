@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en" id="html-root">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Team Lead Playbook — первые 30 дней тимлида CS/AM | Account Manager & CS Academy</title>
-<meta name="description" content="Бесплатный плейбук: диагностика команды, структура 1:1, KPI-скоркард, матрица делегирования и сценарий сложного разговора для новых тимлидов Customer Success и Account Management.">
-<meta property="og:title" content="Team Lead Playbook — первые 30 дней тимлида CS/AM">
-<meta property="og:description" content="Практический фреймворк для новых тимлидов CS/AM: диагностика, 1:1, KPI, делегирование, сложные разговоры.">
+<title id="doc-title">Team Lead Playbook — the first 30 days of a CS/AM Team Lead | Account Manager &amp; CS Academy</title>
+<meta name="description" id="meta-description" content="Free playbook: team diagnostic, 1:1 structure, KPI scorecard, delegation matrix and a difficult-conversation script for new Customer Success and Account Management team leads.">
+<meta property="og:title" content="Team Lead Playbook — the first 30 days of a CS/AM Team Lead">
+<meta property="og:description" content="A practical framework for new CS/AM team leads: diagnostic, 1:1, KPI, delegation, difficult conversations.">
 <meta property="og:image" content="https://amacademy.pro/og-image.jpg">
 <meta property="og:url" content="https://amacademy.pro/playbook/">
 <link rel="canonical" href="https://amacademy.pro/playbook/">
@@ -40,6 +40,17 @@
     opacity:.05; mix-blend-mode:overlay;
     background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
+  .lang-toggle{
+    position:absolute; top:20px; right:24px; z-index:3; display:flex; gap:2px;
+    font-family:var(--mono); font-size:11px; font-weight:700; letter-spacing:.06em;
+  }
+  .lang-toggle button{
+    background:transparent; border:1px solid var(--line); color:var(--text-dim2);
+    padding:5px 10px; cursor:pointer; font-family:inherit; font-size:inherit; font-weight:inherit;
+  }
+  .lang-toggle button:first-child{border-radius:6px 0 0 6px;}
+  .lang-toggle button:last-child{border-radius:0 6px 6px 0; border-left:none;}
+  .lang-toggle button.active{background:var(--surface-2); color:var(--teal); border-color:var(--teal);}
   .hero{
     position:relative; overflow:hidden;
     background:
@@ -65,7 +76,7 @@
   .eyebrow .dot{width:6px;height:6px;border-radius:50%;background:var(--teal); flex:none;}
   h1{
     font-size:clamp(28px, 5vw, 46px); line-height:1.08; letter-spacing:-.02em;
-    margin:0 0 18px; font-weight:800; max-width:16ch;
+    margin:0 0 18px; font-weight:800; max-width:20ch;
   }
   h1 .hl{color:var(--gold);}
   .sub{font-size:17px; color:var(--text-dim); max-width:56ch; margin:0 0 30px;}
@@ -90,6 +101,7 @@
   }
   .dl-btn:hover{transform:translateY(-2px); box-shadow:0 14px 30px -8px rgba(255,207,107,.5); background-position:100% 0%;}
   .dl-btn .arrow{font-size:18px;}
+  .dl-btn[hidden]{display:none;}
   .fineprint{font-family:var(--mono); font-size:11.5px; color:var(--text-dim2); margin-top:16px;}
 
   .section{padding:56px 24px;}
@@ -116,54 +128,58 @@
 <body>
 
 <div class="hero">
+  <div class="lang-toggle">
+    <button type="button" id="lang-en" onclick="setLang('en')">EN</button>
+    <button type="button" id="lang-ru" onclick="setLang('ru')">RU</button>
+  </div>
   <div class="suit-wm">&#9824;</div>
   <div class="wrap">
-    <div class="eyebrow"><span class="dot"></span>CS / AM Leadership · Free Playbook</div>
-    <h1>Первые 30 дней <span class="hl">тимлида</span> CS / AM</h1>
-    <p class="sub">Практический фреймворк для тех, кто только стал руководителем: <b>диагностика команды, структура 1:1, KPI-скоркард, матрица делегирования и сценарий сложного разговора</b>. Без теории ради теории — только то, что реально применяется в первый месяц.</p>
+    <div class="eyebrow"><span class="dot"></span><span data-i18n="eyebrow">CS / AM Leadership · Free Playbook</span></div>
+    <h1 data-i18n="h1">The First 30 Days of a <span class="hl">CS / AM Team Lead</span></h1>
+    <p class="sub" data-i18n="sub">A practical framework for new leads: <b>team diagnostic, 1:1 structure, KPI scorecard, delegation matrix and a difficult-conversation script</b>. No theory for theory&rsquo;s sake &mdash; just what you actually use in month one.</p>
 
     <div class="cards">
-      <div class="mini-card"><b>10 страниц</b>практический формат</div>
-      <div class="mini-card"><b>EN + RU</b>на выбор</div>
-      <div class="mini-card"><b>Бесплатно</b>без email и подписки</div>
+      <div class="mini-card"><b data-i18n="card1-b">10 pages</b><span data-i18n="card1-t">practical format</span></div>
+      <div class="mini-card"><b data-i18n="card2-b">EN + RU</b><span data-i18n="card2-t">your choice</span></div>
+      <div class="mini-card"><b data-i18n="card3-b">Free</b><span data-i18n="card3-t">no email required</span></div>
     </div>
 
     <div class="dl-row">
-      <a class="dl-btn" href="/downloads/team-lead-playbook-en.pdf" download>
-        <span>Download in English</span><span class="arrow">&darr;</span>
+      <a class="dl-btn" id="btn-en" href="/downloads/team-lead-playbook-en.pdf" download>
+        <span data-i18n="btn-en">Download in English</span><span class="arrow">&darr;</span>
       </a>
-      <a class="dl-btn" href="/downloads/team-lead-playbook-ru.pdf" download>
-        <span>Скачать на русском</span><span class="arrow">&darr;</span>
+      <a class="dl-btn" id="btn-ru" href="/downloads/team-lead-playbook-ru.pdf" download>
+        <span data-i18n="btn-ru">Скачать на русском</span><span class="arrow">&darr;</span>
       </a>
     </div>
-    <p class="fineprint">PDF · ~6 MB · открывается в любом просмотрщике</p>
+    <p class="fineprint" data-i18n="fineprint">PDF · ~6 MB · opens in any viewer</p>
   </div>
 </div>
 
 <div class="section">
   <div class="wrap">
-    <div class="kicker">Что внутри</div>
-    <h2>5 рабочих фреймворков на первый месяц</h2>
+    <div class="kicker" data-i18n="kicker">What&rsquo;s Inside</div>
+    <h2 data-i18n="h2">5 working frameworks for month one</h2>
     <div class="frameworks">
       <div class="fw-card"><div class="bar" style="background:var(--teal);"></div>
-        <h4>Team Diagnostic</h4>
-        <p>Скоркард команды на первую неделю — что оценивать до того, как начнёшь что-то менять.</p>
+        <h4 data-i18n="fw1-h">Team Diagnostic</h4>
+        <p data-i18n="fw1-p">A team scorecard for week one &mdash; what to assess before you change anything.</p>
       </div>
       <div class="fw-card"><div class="bar" style="background:var(--gold);"></div>
-        <h4>1:1 Framework</h4>
-        <p>Структура встречи, после которой люди приносят решения, а не проблемы.</p>
+        <h4 data-i18n="fw2-h">1:1 Framework</h4>
+        <p data-i18n="fw2-p">A meeting structure that gets people bringing solutions, not just problems.</p>
       </div>
       <div class="fw-card"><div class="bar" style="background:var(--coral);"></div>
-        <h4>KPI Scorecard</h4>
-        <p>Опережающие и результирующие показатели — как не спутать активность с результатом.</p>
+        <h4 data-i18n="fw3-h">KPI Scorecard</h4>
+        <p data-i18n="fw3-p">Leading vs. outcome indicators &mdash; how not to mistake activity for impact.</p>
       </div>
       <div class="fw-card"><div class="bar" style="background:var(--magenta);"></div>
-        <h4>Delegation Matrix</h4>
-        <p>4 уровня делегирования — от «выполнить процесс» до «полностью владеть результатом».</p>
+        <h4 data-i18n="fw4-h">Delegation Matrix</h4>
+        <p data-i18n="fw4-p">4 levels of delegation &mdash; from &ldquo;follow the process&rdquo; to &ldquo;fully own the outcome.&rdquo;</p>
       </div>
       <div class="fw-card"><div class="bar" style="background:var(--teal);"></div>
-        <h4>Difficult Conversation Script</h4>
-        <p>5 шагов сложного разговора без перехода в конфликт.</p>
+        <h4 data-i18n="fw5-h">Difficult Conversation Script</h4>
+        <p data-i18n="fw5-p">5 steps for a hard conversation that doesn&rsquo;t turn into conflict.</p>
       </div>
     </div>
   </div>
@@ -172,6 +188,81 @@
 <footer>
   ACCOUNT MANAGER &amp; <span style="color:var(--gold); font-weight:700;">CS ACADEMY</span> &middot; <a href="https://amacademy.pro">amacademy.pro</a>
 </footer>
+
+<script>
+  var I18N = {
+    en: {
+      "eyebrow": "CS / AM Leadership · Free Playbook",
+      "h1": "The First 30 Days of a <span class=\"hl\">CS / AM Team Lead</span>",
+      "sub": "A practical framework for new leads: <b>team diagnostic, 1:1 structure, KPI scorecard, delegation matrix and a difficult-conversation script</b>. No theory for theory&rsquo;s sake &mdash; just what you actually use in month one.",
+      "card1-b": "10 pages", "card1-t": "practical format",
+      "card2-b": "EN + RU", "card2-t": "your choice",
+      "card3-b": "Free", "card3-t": "no email required",
+      "btn-en": "Download in English",
+      "btn-ru": "Скачать на русском",
+      "fineprint": "PDF · ~6 MB · opens in any viewer",
+      "kicker": "What&rsquo;s Inside",
+      "h2": "5 working frameworks for month one",
+      "fw1-h": "Team Diagnostic", "fw1-p": "A team scorecard for week one &mdash; what to assess before you change anything.",
+      "fw2-h": "1:1 Framework", "fw2-p": "A meeting structure that gets people bringing solutions, not just problems.",
+      "fw3-h": "KPI Scorecard", "fw3-p": "Leading vs. outcome indicators &mdash; how not to mistake activity for impact.",
+      "fw4-h": "Delegation Matrix", "fw4-p": "4 levels of delegation &mdash; from &ldquo;follow the process&rdquo; to &ldquo;fully own the outcome.&rdquo;",
+      "fw5-h": "Difficult Conversation Script", "fw5-p": "5 steps for a hard conversation that doesn&rsquo;t turn into conflict.",
+      "title": "Team Lead Playbook — the first 30 days of a CS/AM Team Lead | Account Manager & CS Academy",
+      "meta-description": "Free playbook: team diagnostic, 1:1 structure, KPI scorecard, delegation matrix and a difficult-conversation script for new Customer Success and Account Management team leads."
+    },
+    ru: {
+      "eyebrow": "CS / AM Leadership · Бесплатный плейбук",
+      "h1": "Первые 30 дней <span class=\"hl\">тимлида</span> CS / AM",
+      "sub": "Практический фреймворк для тех, кто только стал руководителем: <b>диагностика команды, структура 1:1, KPI-скоркард, матрица делегирования и сценарий сложного разговора</b>. Без теории ради теории &mdash; только то, что реально применяется в первый месяц.",
+      "card1-b": "10 страниц", "card1-t": "практический формат",
+      "card2-b": "EN + RU", "card2-t": "на выбор",
+      "card3-b": "Бесплатно", "card3-t": "без email и подписки",
+      "btn-en": "Download in English",
+      "btn-ru": "Скачать на русском",
+      "fineprint": "PDF · ~6 МБ · открывается в любом просмотрщике",
+      "kicker": "Что внутри",
+      "h2": "5 рабочих фреймворков на первый месяц",
+      "fw1-h": "Team Diagnostic", "fw1-p": "Скоркард команды на первую неделю &mdash; что оценивать до того, как начнёшь что-то менять.",
+      "fw2-h": "1:1 Framework", "fw2-p": "Структура встречи, после которой люди приносят решения, а не проблемы.",
+      "fw3-h": "KPI Scorecard", "fw3-p": "Опережающие и результирующие показатели &mdash; как не спутать активность с результатом.",
+      "fw4-h": "Delegation Matrix", "fw4-p": "4 уровня делегирования &mdash; от &laquo;выполнить процесс&raquo; до &laquo;полностью владеть результатом&raquo;.",
+      "fw5-h": "Difficult Conversation Script", "fw5-p": "5 шагов сложного разговора без перехода в конфликт.",
+      "title": "Team Lead Playbook — первые 30 дней тимлида CS/AM | Account Manager & CS Academy",
+      "meta-description": "Бесплатный плейбук: диагностика команды, структура 1:1, KPI-скоркард, матрица делегирования и сценарий сложного разговора для новых тимлидов Customer Success и Account Management."
+    }
+  };
+
+  function setLang(lang){
+    if(!I18N[lang]) lang = 'en';
+    var dict = I18N[lang];
+    document.querySelectorAll('[data-i18n]').forEach(function(el){
+      var key = el.getAttribute('data-i18n');
+      if(dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.getElementById('html-root').lang = lang;
+    document.getElementById('doc-title').textContent = dict['title'];
+    document.getElementById('meta-description').setAttribute('content', dict['meta-description']);
+
+    // show only the matching download button, hide the other
+    document.getElementById('btn-en').hidden = (lang !== 'en');
+    document.getElementById('btn-ru').hidden = (lang !== 'ru');
+
+    // reflect active state on the manual toggle
+    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    document.getElementById('lang-ru').classList.toggle('active', lang === 'ru');
+
+    try{ localStorage.setItem('playbook-lang', lang); }catch(e){}
+  }
+
+  (function(){
+    var saved = null;
+    try{ saved = localStorage.getItem('playbook-lang'); }catch(e){}
+    var browserLang = (navigator.language || navigator.userLanguage || 'en').toLowerCase();
+    var detected = browserLang.indexOf('ru') === 0 ? 'ru' : 'en';
+    setLang(saved || detected);
+  })();
+</script>
 
 </body>
 </html>
